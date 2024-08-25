@@ -46,5 +46,4 @@ public class ConfirmationPage extends AbstractComponent {
 	public String getThankYouText() {
 		return thankYouText.getText();
 	}
-
 }

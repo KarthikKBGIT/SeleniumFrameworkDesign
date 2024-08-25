@@ -25,6 +25,10 @@ public class LandingPage extends AbstractComponent{
 	
 	@FindBy(id="login")
 	WebElement loginButton;
+	//ng-tns-c4-13 ng-star-inserted ng-trigger ng-trigger-flyInOut ngx-toastr toast-error
+	@FindBy(css = ".ng-trigger-flyInOut")
+	WebElement errorMessage;
+
 	
 	public void goTo() {
 		driver.get(this.url);
@@ -35,5 +39,10 @@ public class LandingPage extends AbstractComponent{
 		loginButton.click();
 		ProductCatalogue productCatalogue = new ProductCatalogue(this.driver);
 		return productCatalogue;
+	}
+
+	public String getErrorMessage(){
+		waitForWebElementToAppear(errorMessage);
+		return errorMessage.getText();
 	}
 }

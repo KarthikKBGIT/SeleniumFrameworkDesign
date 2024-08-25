@@ -1,22 +1,20 @@
-package com.firstframework;
+package com.firstframework.tests;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import com.firstframework.testcomponents.BaseTest;
 import com.firstframwork.pageobjects.CartProducts;
 import com.firstframwork.pageobjects.ConfirmationPage;
 import com.firstframwork.pageobjects.LandingPage;
 import com.firstframwork.pageobjects.ProductCatalogue;
-
-import java.time.Duration;
+import java.io.IOException;
 import java.util.List;
 
 public class StandAloneTest_POM {
 
-	public static void main(String[] args) {
-		WebDriver driver = new ChromeDriver();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+	public static void main(String[] args) throws IOException {
+		BaseTest baseTest = new BaseTest();
+		WebDriver driver = baseTest.initializeDriver();
 		LandingPage landingPage = new LandingPage(driver);
 		//ProductCatalogue productCatalogue= new ProductCatalogue(driver);
 		//CartProducts cartProducts = new CartProducts(driver);
@@ -26,14 +24,9 @@ public class StandAloneTest_POM {
 		String productName = "ADIDAS ORIGINAL";
 		String partialCountryName ="ind";
 
-		
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		
 		landingPage.goTo();
 		ProductCatalogue productCatalogue = landingPage.loginApplication(email, password);
 		
-		List<WebElement> products = productCatalogue.getProducts();
 		CartProducts cartProducts = productCatalogue.addProductToCart(productName);
 		
 		Assert.assertTrue(cartProducts.checkProductNameInCart(productName));
