@@ -6,28 +6,29 @@ import com.firstframwork.pageobjects.ConfirmationPage;
 import com.firstframwork.pageobjects.OrdersPage;
 import com.firstframwork.pageobjects.ProductCatalogue;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class SubmitOrderTest extends BaseTest {
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 
-	String email ="karthikkb@gmail.com";
-	String password ="Karthikkb4@";
-	String productName = "ADIDAS ORIGINAL";
+public class SubmitOrderTest extends BaseTest {
 
 	ProductCatalogue productCatalogue;
 	CartProducts cartProducts;
 	ConfirmationPage confirmationPage;
 	OrdersPage ordersPage;
 
-	@Test
-	public void SubmitOrder() {
+	@Test(dataProvider="getData", groups = {"SubmitOrderByDataProvider"})
+	public void SubmitOrder(HashMap<String, String> input) {
 		String partialCountryName ="ind";
 
-		productCatalogue = landingPage.loginApplication(email, password);
+		productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
 		
-		cartProducts = productCatalogue.addProductToCart(productName);
+		cartProducts = productCatalogue.addProductToCart(input.get("productName"));
 		
-		Assert.assertTrue(cartProducts.checkProductNameInCart(productName));
+		Assert.assertTrue(cartProducts.checkProductNameInCart(input.get("productName")));
 		confirmationPage = cartProducts.checkOut();
 		
 		confirmationPage.selectCountry(partialCountryName);
@@ -35,10 +36,34 @@ public class SubmitOrderTest extends BaseTest {
 		Assert.assertTrue(confirmationPage.getThankYouText().equalsIgnoreCase("Thankyou for the order."));
 	}
 	
-	@Test(dependsOnMethods = {"SubmitOrder"})
-	public void orderHistoryPageValidation() {
-		productCatalogue = landingPage.loginApplication(email, password);
+	@Test(dependsOnMethods = {"SubmitOrder"}, dataProvider = "getData", groups = {"SubmitOrderByDataProvider"})
+	public void orderHistoryPageValidation(HashMap<String, String> input) {
+		productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
 		ordersPage = productCatalogue.goToOrders();
-		Assert.assertTrue(ordersPage.validateOrdername(productName));
+		Assert.assertTrue(ordersPage.validateOrdername(input.get("productName")));
+	}
+
+//	@DataProvider
+//	public Object[][] getData(){
+//		return new Object[][] {{"karthikkb@gmail.com","Karthikkb4@","ZARA COAT 3"},
+//								{"karthikkb@gmail.com","Karthikkb4@","ADIDAS ORIGINAL"}};
+//	}
+
+	@DataProvider
+	public Object[][] getData() throws IOException {
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")
+				+ "//src//test//java//com//firstframework//data//PurchaseOrder.json");
+
+		/*HashMap<String,String> dataMap1 = new HashMap<String, String>();
+		HashMap<String,String> dataMap2 = new HashMap<String, String>();
+		dataMap1.put("email", "karthikkb@gmail.com");
+		dataMap1.put("password", "Karthikkb4@");
+		dataMap1.put("productName", "ZARA COAT 3");
+
+		dataMap2.put("email", "karthikkb@gmail.com");
+		dataMap2.put("password", "Karthikkb4@");
+		dataMap2.put("productName", "ADIDAS ORIGINAL");*/
+
+		return new Object[][] {{data.get(0)},{data.get(1)}};
 	}
 }

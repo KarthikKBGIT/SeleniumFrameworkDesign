@@ -1,11 +1,19 @@
 package com.firstframework.testcomponents;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.firstframwork.pageobjects.LandingPage;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -46,5 +54,23 @@ public class BaseTest {
 	@AfterMethod(alwaysRun = true)
 	public void CloseDriver(){
 		driver.close();
+	}
+
+	public List<HashMap<String,String>> getJsonDataToMap(String filePath) throws IOException {
+		//Read Json
+		String JSONContent = FileUtils.readFileToString(new File(filePath));
+		//String to HashMap - Jackson databind
+		ObjectMapper mapper = new ObjectMapper();
+		List<HashMap<String,String>> data = mapper.readValue(JSONContent, new TypeReference<List<HashMap<String, String>>>() {
+		});
+		return data;
+	}
+
+	public String getScreenshot(String testCaseName) throws IOException {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		File destination = new File(System.getProperty("user.dir")+"//reports"+testCaseName+".png");
+		FileUtils.copyFile(source, destination);
+		return System.getProperty("user.dir")+"//reports"+testCaseName+".png";
 	}
 }
