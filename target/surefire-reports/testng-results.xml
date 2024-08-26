@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results retried="2" ignored="2" total="11" passed="6" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-08-27T00:06:33 IST" name="Suite" finished-at="2024-08-27T00:07:41 IST" duration-ms="67681">
+    <groups>
+      <group name="ErrorValidations">
+        <method signature="ErrorValidationTests.LoginErrorValidationIncorrectPassword()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" name="LoginErrorValidationIncorrectPassword" class="com.firstframework.tests.ErrorValidationTests"/>
+      </group> <!-- ErrorValidations -->
+      <group name="SubmitOrderByDataProvider">
+        <method signature="SubmitOrderTest.SubmitOrder(java.util.HashMap)[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" name="SubmitOrder" class="com.firstframework.tests.SubmitOrderTest"/>
+        <method signature="SubmitOrderTest.orderHistoryPageValidation(java.util.HashMap)[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" name="orderHistoryPageValidation" class="com.firstframework.tests.SubmitOrderTest"/>
+      </group> <!-- SubmitOrderByDataProvider -->
+    </groups>
+    <test started-at="2024-08-27T00:06:33 IST" name="Error Validation Test" finished-at="2024-08-27T00:07:24 IST" duration-ms="50336">
+      <class name="com.firstframework.tests.ErrorValidationTests">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:06:33 IST" name="launchApplication" finished-at="2024-08-27T00:06:43 IST" duration-ms="9447" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="LoginErrorValidationIncorrectEmail()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:06:43 IST" name="LoginErrorValidationIncorrectEmail" finished-at="2024-08-27T00:06:43 IST" duration-ms="543" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrorValidationIncorrectEmail -->
+        <test-method is-config="true" signature="CloseDriver()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:06:44 IST" name="CloseDriver" finished-at="2024-08-27T00:06:44 IST" duration-ms="224" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseDriver -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:06:44 IST" name="launchApplication" finished-at="2024-08-27T00:06:53 IST" duration-ms="9071" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="LoginErrorValidationIncorrectEmailandPassword()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:06:53 IST" name="LoginErrorValidationIncorrectEmailandPassword" finished-at="2024-08-27T00:06:54 IST" duration-ms="930" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrorValidationIncorrectEmailandPassword -->
+        <test-method is-config="true" signature="CloseDriver()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:06:54 IST" name="CloseDriver" finished-at="2024-08-27T00:06:55 IST" duration-ms="172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseDriver -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:06:55 IST" name="launchApplication" finished-at="2024-08-27T00:07:03 IST" duration-ms="7947" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method retried="true" signature="LoginErrorValidationIncorrectPassword()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:07:03 IST" name="LoginErrorValidationIncorrectPassword" finished-at="2024-08-27T00:07:04 IST" duration-ms="1273" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Incorrect email or password.] but found [Incorrect email or password]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email or password]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at com.firstframework.tests.ErrorValidationTests.LoginErrorValidationIncorrectPassword(ErrorValidationTests.java:14)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrorValidationIncorrectPassword -->
+        <test-method is-config="true" signature="CloseDriver()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:07:04 IST" name="CloseDriver" finished-at="2024-08-27T00:07:04 IST" duration-ms="206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseDriver -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:07:04 IST" name="launchApplication" finished-at="2024-08-27T00:07:13 IST" duration-ms="9209" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method retried="true" signature="LoginErrorValidationIncorrectPassword()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:07:13 IST" name="LoginErrorValidationIncorrectPassword" finished-at="2024-08-27T00:07:14 IST" duration-ms="979" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Incorrect email or password.] but found [Incorrect email or password]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email or password]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at com.firstframework.tests.ErrorValidationTests.LoginErrorValidationIncorrectPassword(ErrorValidationTests.java:14)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrorValidationIncorrectPassword -->
+        <test-method is-config="true" signature="CloseDriver()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:07:14 IST" name="CloseDriver" finished-at="2024-08-27T00:07:14 IST" duration-ms="76" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseDriver -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:07:14 IST" name="launchApplication" finished-at="2024-08-27T00:07:23 IST" duration-ms="8253" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="LoginErrorValidationIncorrectPassword()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:07:23 IST" name="LoginErrorValidationIncorrectPassword" finished-at="2024-08-27T00:07:23 IST" duration-ms="512" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Incorrect email or password.] but found [Incorrect email or password]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email or password]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at com.firstframework.tests.ErrorValidationTests.LoginErrorValidationIncorrectPassword(ErrorValidationTests.java:14)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrorValidationIncorrectPassword -->
+        <test-method is-config="true" signature="CloseDriver()[pri:0, instance:com.firstframework.tests.ErrorValidationTests@4f0f2942]" started-at="2024-08-27T00:07:24 IST" name="CloseDriver" finished-at="2024-08-27T00:07:24 IST" duration-ms="146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseDriver -->
+      </class> <!-- com.firstframework.tests.ErrorValidationTests -->
+    </test> <!-- Error Validation Test -->
+    <test started-at="2024-08-27T00:06:33 IST" name="Submit Order Test" finished-at="2024-08-27T00:07:41 IST" duration-ms="67681">
+      <class name="com.firstframework.tests.SubmitOrderTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" started-at="2024-08-27T00:06:34 IST" name="launchApplication" finished-at="2024-08-27T00:06:43 IST" duration-ms="9427" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="SubmitOrder(java.util.HashMap)[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" started-at="2024-08-27T00:06:43 IST" name="SubmitOrder" data-provider="getData" finished-at="2024-08-27T00:06:58 IST" duration-ms="14755" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Karthikkb4@, email=karthikkb@gmail.com, productName=ZARA COAT 3}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SubmitOrder -->
+        <test-method is-config="true" signature="CloseDriver()[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" started-at="2024-08-27T00:06:58 IST" name="CloseDriver" finished-at="2024-08-27T00:06:58 IST" duration-ms="91" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseDriver -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" started-at="2024-08-27T00:06:58 IST" name="launchApplication" finished-at="2024-08-27T00:07:07 IST" duration-ms="9243" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="SubmitOrder(java.util.HashMap)[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" started-at="2024-08-27T00:07:07 IST" name="SubmitOrder" data-provider="getData" finished-at="2024-08-27T00:07:22 IST" duration-ms="14673" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Karthikkb4@, email=karthikkb@gmail.com, productName=ADIDAS ORIGINAL}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SubmitOrder -->
+        <test-method is-config="true" signature="CloseDriver()[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" started-at="2024-08-27T00:07:22 IST" name="CloseDriver" finished-at="2024-08-27T00:07:22 IST" duration-ms="166" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseDriver -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" started-at="2024-08-27T00:07:22 IST" name="launchApplication" finished-at="2024-08-27T00:07:30 IST" duration-ms="8105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="orderHistoryPageValidation(java.util.HashMap)[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" started-at="2024-08-27T00:07:30 IST" name="orderHistoryPageValidation" data-provider="getData" finished-at="2024-08-27T00:07:31 IST" depends-on-methods="com.firstframework.tests.SubmitOrderTest.SubmitOrder" duration-ms="837" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Karthikkb4@, email=karthikkb@gmail.com, productName=ZARA COAT 3}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- orderHistoryPageValidation -->
+        <test-method is-config="true" signature="CloseDriver()[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" started-at="2024-08-27T00:07:32 IST" name="CloseDriver" finished-at="2024-08-27T00:07:32 IST" duration-ms="166" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseDriver -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" started-at="2024-08-27T00:07:32 IST" name="launchApplication" finished-at="2024-08-27T00:07:40 IST" duration-ms="8051" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="orderHistoryPageValidation(java.util.HashMap)[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" started-at="2024-08-27T00:07:40 IST" name="orderHistoryPageValidation" data-provider="getData" finished-at="2024-08-27T00:07:41 IST" depends-on-methods="com.firstframework.tests.SubmitOrderTest.SubmitOrder" duration-ms="776" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Karthikkb4@, email=karthikkb@gmail.com, productName=ADIDAS ORIGINAL}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- orderHistoryPageValidation -->
+        <test-method is-config="true" signature="CloseDriver()[pri:0, instance:com.firstframework.tests.SubmitOrderTest@70ed52de]" started-at="2024-08-27T00:07:41 IST" name="CloseDriver" finished-at="2024-08-27T00:07:41 IST" duration-ms="138" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseDriver -->
+      </class> <!-- com.firstframework.tests.SubmitOrderTest -->
+    </test> <!-- Submit Order Test -->
+  </suite> <!-- Suite -->
+</testng-results>

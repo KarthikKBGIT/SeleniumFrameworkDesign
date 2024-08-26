@@ -6,6 +6,9 @@
             <include name="ErrorValidations"/>
         </run>
     </groups>
+    <listeners>
+        <listener class-name= "com.firstframework.testcomponents.Listeners"/>
+    </listeners>
   <test thread-count="5" name="Error Validation Test">
 	  <classes>
 		  <class name="com.firstframework.tests.ErrorValidationTests"></class>

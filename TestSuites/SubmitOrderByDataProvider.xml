@@ -6,6 +6,9 @@
             <include name="SubmitOrderByDataProvider"/>
         </run>
     </groups>
+    <listeners>
+        <listener class-name= "com.firstframework.testcomponents.Listeners"/>
+    </listeners>
     <test thread-count="5" name="Submit Order Test">
         <classes>
             <class name="com.firstframework.tests.SubmitOrderTest"></class>

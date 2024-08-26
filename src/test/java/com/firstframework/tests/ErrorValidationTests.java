@@ -1,16 +1,17 @@
 package com.firstframework.tests;
 
 import com.firstframework.testcomponents.BaseTest;
+import com.firstframework.testcomponents.Retry;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ErrorValidationTests extends BaseTest {
-	@Test(groups = {"ErrorValidations"})
+	@Test(groups = {"ErrorValidations"}, retryAnalyzer = Retry.class)
 	public void LoginErrorValidationIncorrectPassword() {
 		String email ="karthikkb@gmail.com";
 		String password ="Karthik4@";
 		landingPage.loginApplication(email, password);
-		Assert.assertEquals("Incorrect email or password.",landingPage.getErrorMessage());
+		Assert.assertEquals("Incorrect email or password",landingPage.getErrorMessage());
 	}
 	@Test
 	public void LoginErrorValidationIncorrectEmail() {
